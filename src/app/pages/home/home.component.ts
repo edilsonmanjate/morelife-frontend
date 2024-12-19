@@ -1,16 +1,30 @@
 import { Component } from '@angular/core';
+import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatButtonModule, MatDividerModule, MatIconModule,MatProgressSpinnerModule],
+  imports: [MatButtonModule, MatMenuModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
+
 export class HomeComponent {
+  title = 'morelife-frontend';  
+
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+    ngOnDestroy() {
+
+      
+ 
+    
+    }
 
 }
