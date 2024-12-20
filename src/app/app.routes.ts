@@ -28,14 +28,9 @@ export const routes: Routes = [
                 component : DonatorComponent
             },
             {
-             path:'donatoin',
+             path:'donation',
                 component : DonationComponent
             },
         ]   
-    },
-    {
-        path:'donator',
-        component : HomeComponent
     }
-
 ];

@@ -1,1 +1,141 @@
-<p>donator works!</p>
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-7">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <div class="row">
+                        <div class="col-6 text-white">
+                            <strong>Donator List</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <button class="btn btn-warning">Add New</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Donator ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Birth Date</th>
+                                <th>Weight</th>
+                                <th>Height</th>
+                                <th>Type</th>
+                                <th>Genre</th>
+                                <th>RH</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data rows go here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header bg-secondary">
+                    <div class="row">
+                        <div class="col-6 text-white">
+                            <strong>New Donator</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <button class="btn btn-primary">Close</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form class="mb-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="employeeName" class="form-label">Name</label>
+                                <input name="name" [(ngModel)]="donatorObj.name" class="form-control" id="employeeName"
+                                    placeholder="Enter employee name">
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="emailId" class="form-label">Email</label>
+                                <input type="email" name="" [(ngModel)]="donatorObj.email" class="form-control" id="emailId" placeholder="Enter email">
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="gender" class="form-label">Genre</label>
+                                <select id="gender" class="form-select">
+                                    <option selected>Select genre</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="birthDate" class="form-label">Birth Date</label>
+                                <input type="date"[(ngModel)]="donatorObj.birthDate" class="form-control" id="birthDate">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label for="password" class="form-label">Weight</label>
+                                <input type="number"[(ngModel)]="donatorObj.weight" class="form-control" id="weight" placeholder="Enter Weight">
+                            </div>
+                            <div class="col-md-2">
+                                <label for="role" class="form-label">Height</label>
+                                <input type="number"[(ngModel)]="donatorObj.height" class="form-control" id="height" placeholder="Enter height">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="bloodType" class="form-label">Type</label>
+                                <select id="bloodType" [(ngModel)]="donatorObj.bloodType" name="bloodType" class="form-select">
+                                    <option selected>Select type</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="AB">AB</option>
+                                    <option value="O">O</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="rhFactor" class="form-label">RH</label>
+                                <select id="rhFactor" [(ngModel)]="donatorObj.rhFactor" name="rhFactor" class="form-select">
+                                    <option selected>Select RH</option>
+                                    <option value="Positive">Positive</option>
+                                    <option value="Negative">Negative</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            
+                            <div class="col-md-6">
+                                <label for="city" class="form-label">City</label>
+                                <input name="" [(ngModel)]="donatorObj.address.city" class="form-control" id="city">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="state" class="form-label">State</label>
+                                <input name="" [(ngModel)]="donatorObj.address.state" class="form-control" id="state">
+                            </div>
+                            <div class="col-md-8">
+                                <label for="street" class="form-label">Street</label>
+                                <input name="" [(ngModel)]="donatorObj.address.street" class="form-control" id="street">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="postalCode" class="form-label">Postal code</label>
+                                <input name="" [(ngModel)]="donatorObj.address.postalCode" class="form-control" id="postalCode">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-warning mt-3">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
