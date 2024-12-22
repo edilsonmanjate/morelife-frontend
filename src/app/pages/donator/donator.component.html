@@ -16,12 +16,12 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Donator ID</th>
+                                <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Birth Date</th>
-                                <th>Weight</th>
-                                <th>Height</th>
+                                <!-- <th>Weight</th>
+                                <th>Height</th> -->
                                 <th>Type</th>
                                 <th>Genre</th>
                                 <th>RH</th>
@@ -29,7 +29,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Data rows go here -->
+                            @for (item of donatorList; track $index) {
+                                <tr>
+                                    <td>{{ $index+1}}</td>
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.email }}</td>
+                                    <td>{{ item.birthDate }}</td>
+                                    <!-- <td>{{ item.weight }}</td>
+                                    <td>{{ item.height }}</td> -->
+                                    <td>{{ item.bloodType }}</td>
+                                    <td>{{ item.genre }}</td>
+                                    <td>{{ item.rhFactor }}</td>
+                                    <td>
+                                        <button class="btn btn-warning"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-danger"><i class="fa fa-remove"></i></button>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -52,22 +68,22 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="employeeName" class="form-label">Name</label>
-                                <input name="name" [(ngModel)]="donatorObj.name" class="form-control" id="employeeName"
+                                <input name="employeeName" [(ngModel)]="donatorObj.name" class="form-control" id="employeeName"
                                     placeholder="Enter employee name">
                             </div>
 
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="emailId" class="form-label">Email</label>
-                                <input type="email" name="" [(ngModel)]="donatorObj.email" class="form-control" id="emailId" placeholder="Enter email">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email" [(ngModel)]="donatorObj.email" class="form-control" id="email" placeholder="Enter email">
                             </div>
 
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="gender" class="form-label">Genre</label>
-                                <select id="gender" class="form-select">
+                                <label for="genre" class="form-label">Genre</label>
+                                <select id="genre" class="form-select">
                                     <option selected>Select genre</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -75,17 +91,17 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="birthDate" class="form-label">Birth Date</label>
-                                <input type="date"[(ngModel)]="donatorObj.birthDate" class="form-control" id="birthDate">
+                                <input type="date" name="birthDate" [(ngModel)]="donatorObj.birthDate" class="form-control" id="birthDate">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-2">
-                                <label for="password" class="form-label">Weight</label>
-                                <input type="number"[(ngModel)]="donatorObj.weight" class="form-control" id="weight" placeholder="Enter Weight">
+                                <label for="weight" class="form-label">Weight</label>
+                                <input type="number" name="weight" [(ngModel)]="donatorObj.weight" class="form-control" id="weight" placeholder="Enter Weight">
                             </div>
                             <div class="col-md-2">
-                                <label for="role" class="form-label">Height</label>
-                                <input type="number"[(ngModel)]="donatorObj.height" class="form-control" id="height" placeholder="Enter height">
+                                <label for="height" class="form-label">Height</label>
+                                <input type="number" name="height" [(ngModel)]="donatorObj.height" class="form-control" id="height" placeholder="Enter height">
                             </div>
                             <div class="col-md-4">
                                 <label for="bloodType" class="form-label">Type</label>
@@ -112,23 +128,23 @@
                             
                             <div class="col-md-6">
                                 <label for="city" class="form-label">City</label>
-                                <input name="" [(ngModel)]="donatorObj.address.city" class="form-control" id="city">
+                                <input name="address.city" [(ngModel)]="donatorObj.address.city" class="form-control" id="city">
                             </div>
                             <div class="col-md-6">
                                 <label for="state" class="form-label">State</label>
-                                <input name="" [(ngModel)]="donatorObj.address.state" class="form-control" id="state">
+                                <input name="address.state" [(ngModel)]="donatorObj.address.state" class="form-control" id="state">
                             </div>
                             <div class="col-md-8">
                                 <label for="street" class="form-label">Street</label>
-                                <input name="" [(ngModel)]="donatorObj.address.street" class="form-control" id="street">
+                                <input name="address.street" [(ngModel)]="donatorObj.address.street" class="form-control" id="street">
                             </div>
                             <div class="col-md-4">
                                 <label for="postalCode" class="form-label">Postal code</label>
-                                <input name="" [(ngModel)]="donatorObj.address.postalCode" class="form-control" id="postalCode">
+                                <input name="address.postalCode" [(ngModel)]="donatorObj.address.postalCode" class="form-control" id="postalCode">
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-warning mt-3">Submit</button>
+                        <button type="button" (click)="onSaveDonator()" class="btn btn-warning mt-3">Save</button>
                     </form>
                 </div>
             </div>

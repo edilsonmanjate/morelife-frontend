@@ -34,3 +34,19 @@ export interface Address {
     state: string;
     postalCode: string;
   }
+
+export interface APIResponse {
+    success: string;
+    message: string;
+    data: any;
+    errors : any;
+}
+
+
+
+export interface APIResponseDonator {
+    success: string;
+    message: string;
+    data: Donator;
+    errors : any;
+}
