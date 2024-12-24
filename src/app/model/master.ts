@@ -24,8 +24,6 @@ export class Donator {
         this.address = { id: '', street: '', city: '', state: '', postalCode: '' };
     }
 }
- 
- 
 
 export interface Address {
     id: string;
@@ -42,11 +40,38 @@ export interface APIResponse {
     errors : any;
 }
 
-
-
 export interface APIResponseDonator {
     success: string;
     message: string;
     data: Donator;
     errors : any;
+}
+
+export class Donation {
+    id: string;
+    donatorId: string;
+    donatorName: string;
+    date: string;
+    quantity: number;
+
+    constructor() {
+        this.id = '';
+        this.donatorId = '';
+        this.donatorName = '';
+        this.date = '';
+        this.quantity = 0;
+    }
+}
+
+export class Dashboard {
+    totalDonations: number;
+    totalDonators: number;
+    donationsThisMonht: number;
+
+    constructor() {
+        this.totalDonations = 0;
+        this.totalDonators = 0;
+        this.donationsThisMonht = 0;
+    }
+   
 }

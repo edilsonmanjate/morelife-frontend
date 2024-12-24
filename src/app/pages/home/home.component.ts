@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import { MasterService } from '../../services/master.service';
+import { APIResponse, Dashboard } from '../../model/master';
 
 
 @Component({
@@ -14,17 +16,20 @@ import {MatButtonModule} from '@angular/material/button';
 export class HomeComponent {
   title = 'morelife-frontend';  
 
+    masterService = inject(MasterService);
+    dashboardList: Dashboard = new Dashboard();
+    
+
   constructor() {
   }
 
   ngOnInit() {
+    this.loadDashboard();
   }
 
-    ngOnDestroy() {
-
-      
- 
-    
-    }
-
+  loadDashboard() {
+    this.masterService.getDashboard().subscribe((res: APIResponse) => {
+      this.dashboardList = res.data;
+    });
+  }
 }
