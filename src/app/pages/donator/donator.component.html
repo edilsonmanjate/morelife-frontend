@@ -2,13 +2,13 @@
     <div class="row">
         <div class="col-7">
             <div class="card">
-                <div class="card-header bg-secondary">
+                <div class="card-header bg-danger">
                     <div class="row">
                         <div class="col-6 text-white">
                             <strong>Donator List</strong>
                         </div>
                         <div class="col-6 text-end">
-                            <button class="btn btn-warning">Add New</button>
+                            <button class="btn btn-light text-black">Add New</button>
                         </div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                                 <th>Height</th> -->
                                 <th>Type</th>
                                 <th>Genre</th>
-                                <th>RH</th>
+                                <!-- <th>RH</th> -->
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -39,7 +39,7 @@
                                     <td>{{ item.height }}</td> -->
                                 <td>{{ item.bloodType }}</td>
                                 <td>{{ item.genre }}</td>
-                                <td>{{ item.rhFactor }}</td>
+                                <!-- <td>{{ item.rhFactor }}</td> -->
                                 <td>
                                     <button type="button" class="btn btn-warning btn-sm" title="Edit"><i
                                             class="fa fa-edit" (click)="onEdit(item)"></i></button>
@@ -55,13 +55,13 @@
         </div>
         <div class="col-5">
             <div class="card">
-                <div class="card-header bg-secondary">
+                <div class="card-header bg-danger">
                     <div class="row">
                         <div class="col-6 text-white">
                             <strong>New Donator</strong>
                         </div>
                         <div class="col-6 text-end">
-                            <button class="btn btn-primary">Close</button>
+                            <button class="btn btn-warning">Close</button>
                         </div>
                     </div>
                 </div>
